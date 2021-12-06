@@ -1,0 +1,268 @@
+@mixin title-template {
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    letter-spacing: 0.07rem;
+    text-align: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+#style-16::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-16::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+#style-16::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,#127aa7 0%,#0d81b3be 50%,#14678898 51%,#2ab0ed 100%);
+}
+
+nav {
+    width: 100% !important;
+    padding: 0.8rem 0 !important;
+    margin: 0 !important;
+    i {
+        color: white;
+        margin: 0 2rem;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+.title {
+        @include title-template();
+    }
+.left {
+    background: rgba(66, 78, 65, 0.178);
+    height: 100vh;
+    overflow-y: scroll;
+    .hide {
+    display: none;
+}
+ 
+    .input-group {
+        margin: auto;
+        input {
+            border-radius: 0;;
+        }
+
+    }
+    button {
+            border-radius: 0;
+        }
+
+    .left-bottom {
+        margin-top: 1rem;
+
+        ul li {
+            font-size: .8rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+.right {
+    .card-decks {
+       max-width: 800px;
+       margin: auto;
+       margin-top: 2rem;
+    }
+    .card {
+        height: fit-content;
+        border-radius: 0;
+        border: solid;
+        border-width: 1px;
+        border-color: rgba(30, 138, 44, 0.404);
+        transition: ease-in all .25s;
+        &:hover {
+            transform: scale(1.01);
+            box-shadow: 15px 25px 25px;
+            cursor: pointer;
+        }
+        .card-title {
+            font-size: .7rem;
+        }
+        .card-subtitle {
+            font-size: 1.5rem;
+        }
+    }
+    .actions {
+        .card {
+            margin: 1rem;
+            color: white;
+            border: none;
+            &:first-of-type {
+                background: rgba(0, 128, 75, 0.842);
+            }
+            &:nth-of-type(2n){
+                background: rgba(116, 47, 47, 0.876);
+            }
+            &:nth-of-type(3n){
+                background: rgba(255, 124, 1, 0.74);
+            }
+            .card-img-top i{
+                font-size:3rem;
+                display: block;
+                text-align: center;
+                padding: 1rem 0;
+                padding-bottom: 0rem;
+                color:rgba(119, 119, 119, 0.596);
+                color: white;
+
+                
+            }
+            .card-body {
+                text-align: center;
+            }
+        }
+    }
+    .title {
+         @include title-template();
+        margin-top: 2rem;
+        padding-bottom: 0;
+    }
+
+    table {
+        margin-top: 2rem;
+        thead {
+            background: rgba(194, 193, 193, 0.384);
+            border: rgba(194, 193, 193, 0.384)e;
+        }
+    }
+
+    .history-title {
+        @include title-template();
+        padding: 0;
+    }
+    
+}
+
+#bookView {
+    .modal {
+        height: 80vh !important;
+        width: 80vw !important;
+    }
+    .modal-content {
+        padding: 2rem;
+    }
+    .modal-left {
+        h3 {
+            font-size: 1.3rem;
+            color: rgba(8, 102, 86, 0.692);
+        }
+        span {
+            font-size: 1.2rem;
+            color: rgb(61, 61, 61);
+            letter-spacing: .07rem;
+        }
+    }
+    .modal-right i {
+        font-size: 120px;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: rgba(180, 77, 36, 0.733);
+    }
+    
+    .btn-borrow {
+        display: block;
+        margin-top: 2rem;
+        border: none;
+        background: rgb(7, 160, 101);
+        font-size: 1.2rem;
+        letter-spacing: .07rem;
+        padding: 1rem;
+        color: white;
+    }
+    .btn-return {
+        background: rgb(184, 90, 13);
+    }
+}
+
+#borrowBookView {
+     .modal {
+        height: 80vh !important;
+        width: 80vw !important;
+    }
+    .modal-content {
+        padding: 2rem;
+    }
+    .btn {
+        z-index: -1;
+    }
+    
+    input {
+        width: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .input-group {
+        .btn{
+            display: block;
+        }
+    }
+    .input-group:nth-of-type(n) {
+        margin-bottom: 2rem;
+    }
+    
+    .hide {
+    display: none;
+    }
+    
+}
+
+.btn-borrow {
+        display: block;
+        margin-top: 2rem;
+        border: none;
+        background: rgb(7, 160, 101);
+        font-size: 1.2rem;
+        letter-spacing: .07rem;
+        padding: 1rem;
+        color: white;
+}
+
+.success-msg {
+    background: rgba(1, 85, 53, 0.89);
+    padding: 1rem 2rem;
+    display: inline;
+    position: absolute;
+    top:50px;
+    right: 25px;
+    color: white;
+    font-size: 1.2rem;
+    i {
+        margin-right: 1rem;
+    }
+}

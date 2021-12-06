@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--Bootstrap 4.5.0-->
+    <link rel="stylesheet" href="style.css">
+    <!--Main Stylesheet-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <script src="assets/js/1351.js"></script>
+    <!--Font Awesome Script-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--Font Awesome 4.7.0-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--Font Awesome 4.5.0-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"
+        integrity="sha512-4WpSQe8XU6Djt8IPJMGD9Xx9KuYsVCEeitZfMhPi8xdYlVA5hzRitm0Nt1g2AZFS136s29Nq4E4NVvouVAVrBw=="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+        integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class="container-fluid">
+
+    <div class="main-wrapper row">
+        <nav class="navbar navbar-dark bg-dark nav-fill w-100" style="background-color: #e3f2fd;">
+            <i class="fal fa-arrow-left"></i>
+            <i class="fad fa-user-circle"></i>
+        </nav>
+        <div class="left col-md-3 force-overflow" id="style-16">
+
+            <div class="left-top">
+                <h1 class="title">Library Management</h1>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" placeholder="Search for a book">
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button"><i class="far fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="left-bottom">
+                <ul class="list-group" id="listcontent"></ul>
+            </div>
+        </div>
+
+        <div class="right col-md-9 container-fluid">
+            <div class="card-decks row d-flex justify-content-around">
+                <div class="card col-md-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Total Books</h4>
+                        <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-between "> <span class="st-left"
+                                id="tb-js">100</span>
+                            <span class="st-right"><i class="fal fa-chart-line"></i></span></h6>
+                    </div>
+                </div>
+
+                <div class="card col-md-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Borrowed Books</h4>
+                        <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-between "> <span class="st-left"
+                                id="bb-js">40</span>
+                            <span class="st-right"><i class="fal fa-chart-line"></i></span></h6>
+                    </div>
+                </div>
+
+                <div class="card col-md-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Available Books</h4>
+                        <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-between "> <span class="st-left"
+                                id="ab-js">60</span>
+                            <span class="st-right"><i class="fal fa-chart-line"></i></span></h6>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title">Actions</h1>
+            <div class="actions row d-flex justify-content-center">
+                <div class="card col-md-3" onclick="borrowBookView()">
+                    <div class="card-img-top"><i class="fal fa-layer-plus"></i></div>
+                    <div class="card-body"> Borrow a book </div>
+                </div>
+
+                <div class="card col-md-3">
+                    <div class="card-img-top"><i class="fal fa-undo-alt"></i></div>
+                    <div class="card-body"> Return a book </div>
+                </div>
+
+                <div class="card col-md-3">
+                    <div class="card-img-top"><i class="fal fa-user"></i></i></div>
+                    <div class="card-body"> Accounts </div>
+                </div>
+            </div>
+
+
+            <h1 class="title">History</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Borrower</th>
+                        <th>Book</th>
+                        <th>Action</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id = "history">
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="history-title" id = "hss">No History Yet</div>
+        </div>
+
+
+    </div>
+<div class="success-msg"> <i class="fal fa-check-circle"></i> Successful!</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="bookView" tabindex="-1" role="dialog" aria-labelledby="editmodal" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered container-fluid" role="document">
+            <div class="modal-content ">
+                <div class="info-m d-flex flex-row">
+                    <div class="modal-left flex-fill">
+                        <h3 class="cid">Id: <span id="bid"></span> </h3>
+                        <h3 class="cname">Name: <span id="bname"></span></h3>
+                        <h3 class="cauthor">Author: <span id="bauthor"></span></h3>
+                        <h3 class="cyear">Published Year: <span id="byear"></span></h3>
+                        <h3 class="clanguage">Language: <span id="blanguage"></span></h3>
+                        <h3 class="cstatus">Status: <span id="bstatus"></span></h3>
+                    </div>
+                    <div class="modal-right flex-fill">
+                        <i class="fal fa-times-circle" id="fatimes"></i>
+                        <i class="fal fa-check-circle" id="facheck" style="display: none;"></i>
+                    </div>
+                </div>
+                <button class="btn-borrow" id="btn-borrow">Borrow This Book</button>
+                <button class="btn-borrow btn-return" id="btn-return">Return This Book</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal Ends -->
+
+    <!-- Borrow modal -->
+    <div class="modal fade" id="borrowBookView" tabindex="-1" role="dialog" aria-labelledby="borrowBookView"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered container-fluid" role="document">
+            <div class="modal-content ">
+                <div class="info-m">
+                    <label>Books</label>
+
+                    <div class="input-group">
+
+                        <div class="input-group-prepend">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Book Name</button>
+                            <div class="dropdown-menu" id="bookdropdown" aria-expanded="false">
+                            </div>
+                            <input autocomplete="off" type="text" id="bkdropdown" class="form-control"
+                                aria-label="Text input with dropdown button">
+                        </div>
+                    </div>
+                    <label>Borrower</label>
+
+                    <div class="input-group">
+
+                        <div class="input-group-prepend">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Book Name</button>
+                            <div class="dropdown-menu" id="studentdropdown" aria-expanded="false">
+                            </div>
+                            <input autocomplete="off" type="text" id="stdropdown" class="form-control"
+                                aria-label="Text input with dropdown button">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-borrow" id="btn-borrow" onclick = "borrowInitiator()">Borrow This Book</button>
+
+            </div>
+            <!-- Modal Ends -->
+</body>
+<script src="books.js"></script>
+
+
+</html>
